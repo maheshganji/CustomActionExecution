@@ -48,7 +48,7 @@ jobs:
   custom_action_update:
     runs-on: ubuntu-latest
     needs: custom_action_get
-    name: A Job to get Change2
+    name: A Job to update change
     steps:
       # To use this repository's private action,
       # you must check out the repository
