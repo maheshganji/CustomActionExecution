@@ -51,7 +51,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Custom Action Update Step
-        uses: maheshganji/custom-action-update@v.1
+        uses: maheshganji/custom-action-update@mater
         with:
           change-request-number: 'CHG0030040' # Active CR
           devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
