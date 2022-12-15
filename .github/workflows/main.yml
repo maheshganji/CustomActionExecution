@@ -43,8 +43,9 @@ jobs:
       - name: Output of update
         run: echo "The Status of Update Change Request Details => ${{ steps.update.outputs.change-request-number }}"
         
-  custom_action_get2:
+  custom_action_update1:
     runs-on: ubuntu-latest
+    needs: custom_action_get
     name: A Job to get Change2
     steps:
       # To use this repository's private action,
@@ -66,6 +67,7 @@ jobs:
         run: echo "The Status of Update Change Request Details => ${{ steps.update.outputs.change-request-number }}"     
   custom_action_update:
     runs-on: ubuntu-latest
+    needs: custom_action_update1
     name: A Job to Update Change
     steps:
       # To use this repository's private action,
@@ -76,9 +78,9 @@ jobs:
         uses: maheshganji/custom-action-update@master
         id: test
         with:
-          change-request-number: 'CHG0030040' # Active CR
+          change-request-number: ${{ steps.update.outputs.change-request-number }} # Active CR
           devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
           devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
           instance-url: ${{ secrets.SN_INSTANCE_URL }}
           context-github: ${{ toJSON(github) }}
-          change-request-details: '{ "short_description": "Test description in Updated by Github custom Action - 123","description":"123 - Automated Software Deployment.","work_notes":"Updated by Github Action Custom Update -123"}' #Working Version
+          change-request-details: '{ "short_description": "Test description in Updated by Github custom Action - 1232","description":"1232 - Automated Software Deployment.","work_notes":"Updated by Github Action Custom Update -1223"}' #Working Version
