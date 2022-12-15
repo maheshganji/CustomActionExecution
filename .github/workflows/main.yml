@@ -3,6 +3,25 @@ on:
   workflow_dispatch:
 
 jobs:
+  custom_action_update:
+    runs-on: ubuntu-latest
+    name: A Job to Update Change
+    steps:
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Custom Action Update Step
+        uses: maheshganji/custom-action-update@v1.1
+        with:
+          change-request-number: 'CHG0030040' # Active CR
+          devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
+          devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
+          instance-url: ${{ secrets.SN_INSTANCE_URL }}
+          context-github: ${{ toJSON(github) }}
+          change-request-details: '{ "short_description": "Test description in Updated by Github custom Action - 123","description":"123 - Automated Software Deployment.","work_notes":"Updated by Github Action Custom Update -123"}' #Working Version
+
+
   changeApproval:
     name: ServiceNow Change Approval
     runs-on: ubuntu-latest
