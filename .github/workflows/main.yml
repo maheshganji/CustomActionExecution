@@ -64,6 +64,6 @@ jobs:
           devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
           instance-url: ${{ secrets.SN_INSTANCE_URL }}
           context-github: ${{ toJSON(github) }}
-          change-request-details: '{ "short_description": "Test description in Updated by Github custom Action - 123","description":"123 - Automated Software Deployment.","work_notes":"Updated by Github Action Custom Update -123"}' #Working Version
+          change-request-details: '{ "work_notes":"Testing123"}' #Working Version
       - name: Output of update
         run: echo "The Status of Update Change Request Details => ${{ steps.update1.outputs.status }}"  
