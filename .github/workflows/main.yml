@@ -30,7 +30,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Custom Action Update Step
-        uses: maheshganji/custom-action-get@main    
+        uses: maheshganji/custom-action-get@v.1    
         # Uses an action in the root directory
         id: update
         with:
