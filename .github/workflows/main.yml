@@ -52,7 +52,6 @@ jobs:
         uses: actions/checkout@v3
       - name: Custom Action Update Step
         uses: maheshganji/custom-action-update@v.1
-        id: update2
         with:
           change-request-number: 'CHG0030040' # Active CR
           devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
@@ -60,6 +59,4 @@ jobs:
           instance-url: ${{ secrets.SN_INSTANCE_URL }}
           context-github: ${{ toJSON(github) }}
           change-request-details: '{ "short_description": "Test description in Updated by Github custom Action - 123","description":"123 - Automated Software Deployment.","work_notes":"Updated by Github Action Custom Update -123"}' #Working Version
-      # Use the output from the `hello` step
-      - name: Output of update
-        run: echo "The Status of Update Change Request Details => ${{ steps.update2.outputs.status }}"
+
