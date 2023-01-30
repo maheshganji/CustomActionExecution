@@ -22,7 +22,7 @@ jobs:
           interval: '100'
           timeout: '3600'
           changeCreationTimeOut: '3600'
-          abortOnChangeStepTimeout: false
+          abortOnChangeStepTimeout: true
           abortOnChangeCreationFailure: false
           
   custom_action_get:
