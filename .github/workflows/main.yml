@@ -22,5 +22,5 @@ jobs:
           interval: '10'
           timeout: '30'
           changeCreationTimeOut: '3600'
-          abortOnChangeStepTimeout: false
+          abortOnChangeStepTimeout: true
           abortOnChangeCreationFailure: false
