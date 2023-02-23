@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:     
       - name: ServiceNow Change Approval
-        uses: ServiceNow/servicenow-devops-change@1.35.2
+        uses: ServiceNow/servicenow-devops-change@v1.35.2
 #         uses:  maheshganji/custom-action-get@prod
         id: create
         with:
